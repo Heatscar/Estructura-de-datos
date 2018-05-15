@@ -11,8 +11,9 @@ typedef struct stack{
 
 //Pila vacia
 int empty(stack *s){
- if(s->top==-1)
-      return(1);
+ if(s->top==-1){
+    return(1);
+}
  return(0);
 }
 
@@ -43,7 +44,10 @@ int main(){
 	 s.top=-1;
 	     printf("Dame el numero decimal:\n");
 	     scanf("%d",&num);
-	
+	     
+		 if(num==0){
+	       	printf("Pila Vacia\n");
+	          }
 	     while((num!=0)){
 	       if(!full(&s)){
 	       	//Se toma el numero y saca el residuo
@@ -52,14 +56,14 @@ int main(){
 	          num=num/2;
 	          }
 	       else{
-	          printf("Cola llena\n");
+	          printf("Pila llena\n");
 	          exit(0);
 	          }
 	     }
-	
-	    printf("El numero en decimal es: ");
-	    while(!empty(&s)) {
-	       num=pop(&s);
-	       printf("%d",num);
+	     printf("El numero en binario es: ");
+	    	while(!empty(&s)) {
+	       	num=pop(&s);
+	       	printf("%d",num);
 	       }
+		
 }
